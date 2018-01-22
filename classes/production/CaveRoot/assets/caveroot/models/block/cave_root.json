@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "caveroot:blocks/cave_root"
+    }
+}
