@@ -1,6 +1,8 @@
 package com.kjmaster.caveroot.root;
 
+import com.kjmaster.caveroot.CaveRoot;
 import com.kjmaster.caveroot.proxy.CommonProxy;
+import com.kjmaster.kjlib.common.blocks.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -18,12 +20,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockCaveRoot extends Block {
+public class BlockCaveRoot extends BlockBase {
 
     public BlockCaveRoot() {
-        super(Material.PLANTS);
-        setUnlocalizedName("cave_root_block");
-        setRegistryName("cave_root_block");
+        super("cave_root_block", Material.PLANTS, CreativeTabs.DECORATIONS, 0.1F, 0.1F);
     }
 
     @Override

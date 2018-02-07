@@ -9,3 +9,4 @@ config.caveroot.hasteProbability=Probability That The Haste Effect Is Provided
 config.caveroot.foodValue=Food Value Of Cave Root
 config.caveroot.saturationValue=Saturation Value Of Cave Root
 config.caveroot.isWolfFood=Toggle If Wolf Food
+config.caveroot.dimensions=Dimension IDs

@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = CaveRoot.MODID, version = CaveRoot.VERSION)
+@Mod(modid = CaveRoot.MODID, version = CaveRoot.VERSION, dependencies = "required-after:kjlib")
 public class CaveRoot
 {
     public static final String MODID = "caveroot";
