@@ -1,9 +1,8 @@
-package com.kjmaster.caveroot.root;
+package com.kjmaster.caveroot.torch;
 
 import com.kjmaster.caveroot.CaveRoot;
 import com.kjmaster.caveroot.proxy.CommonProxy;
 import com.kjmaster.kjlib.common.blocks.BlockBase;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -20,20 +19,25 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockCaveRoot extends BlockBase {
+public class BlockTorchFungi extends BlockBase {
 
-    public BlockCaveRoot() {
-        super("cave_root_block", Material.PLANTS, CaveRoot.caveRootTab, 0.1F, 0.1F);
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return CommonProxy.caveRoot;
+    public BlockTorchFungi() {
+        super("torch_fungi_block", Material.PLANTS, CaveRoot.caveRootTab, 0.1F, 0.1F);
     }
 
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return new AxisAlignedBB(0.15D, 0.0D, 0.15D, 0.8D, 0.62D, 0.8D);
+    }
+
+    @Override
+    public int quantityDropped(Random random) {
+        return random.nextInt(4) + 1;
+    }
+
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return CommonProxy.torchSporeItem; // TEMP
     }
 
     @Nullable

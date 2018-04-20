@@ -1,18 +1,18 @@
 package com.kjmaster.caveroot.root;
 
 import com.kjmaster.caveroot.CaveRoot;
-import com.kjmaster.caveroot.proxy.CommonProxy;
 import com.kjmaster.kjlib.common.blocks.BlockBase;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,20 +20,25 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockCaveRoot extends BlockBase {
+public class BlockDriedRoot extends BlockBase {
 
-    public BlockCaveRoot() {
-        super("cave_root_block", Material.PLANTS, CaveRoot.caveRootTab, 0.1F, 0.1F);
+    public BlockDriedRoot() {
+        super("dried_root", Material.PLANTS, CaveRoot.caveRootTab, 0.1F, 0.1F);
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return CommonProxy.caveRoot;
+        return Items.STICK;
+    }
+
+    @Override
+    public int quantityDropped(IBlockState state, int fortune, Random random) {
+        return MathHelper.getInt(random, 3, 5);
     }
 
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return new AxisAlignedBB(0.15D, 0.0D, 0.15D, 0.8D, 0.62D, 0.8D);
+        return new AxisAlignedBB(0.0625, 1.0D, 0.0625, 0.9375, 0.445D, 0.9375);
     }
 
     @Nullable

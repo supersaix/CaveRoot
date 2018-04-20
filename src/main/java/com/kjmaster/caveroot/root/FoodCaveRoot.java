@@ -9,10 +9,10 @@ import net.minecraft.item.ItemFood;
 public class FoodCaveRoot extends ItemFood {
 
     public FoodCaveRoot() {
-        super(ModConfig.foodValue, (float)ModConfig.saturationValue, ModConfig.isWolfFood);
+        super(ModConfig.caveRootCategory.foodValue, (float)ModConfig.caveRootCategory.saturationValue, ModConfig.caveRootCategory.isWolfFood);
         setUnlocalizedName("cave_root");
         setRegistryName("cave_root");
-        setCreativeTab(CreativeTabs.FOOD);
+        setCreativeTab(CaveRoot.caveRootTab);
     }
 
     public static void registerItemModel(Item item) {

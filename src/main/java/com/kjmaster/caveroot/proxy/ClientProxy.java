@@ -2,6 +2,7 @@ package com.kjmaster.caveroot.proxy;
 
 import com.kjmaster.caveroot.CaveRoot;
 import com.kjmaster.caveroot.root.FoodCaveRoot;
+import com.kjmaster.caveroot.torch.ItemTorchSpore;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -21,5 +22,6 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void modelEvent(ModelRegistryEvent event) {
         FoodCaveRoot.registerItemModel(caveRoot);
+        ItemTorchSpore.registerItemModel(torchSporeItem);
     }
 }
